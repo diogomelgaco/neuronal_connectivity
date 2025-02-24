@@ -39,26 +39,26 @@ plot_phi <- function(u_values) {
   mtext(expression(phi(U[i](t))), side = 2, line = 2.5)  # Rotulo para o eixo y
 }
 
-# Funcao sigmoidal auxiliar
-sigmoid <- function(x, b, c) {
-  1 / (1 + exp(-b * (x - c)))
+sigmoid <- function(x, b, c, p_min, p_max) {
+  # Função sigmoidal ajustada com limites
+  p_min + (p_max - p_min) / (1 + exp(-b * (x - c)))
 }
 
-# Definicao da funcao phi conforme fornecida
 phi <- function(x, u) {
-  # Condicoes
-  p0 <- 0.02  # f(U < 0) = 0,02
-  pu <- 0.8   # f(U < u) = 0.8
+  # Novas condições
+  p_min <- 0.02  # f(U -> -inf) = 0.02
+  p0 <- 0.05     # f(U < 0) = 0.05
+  pu <- 0.8      # f(U < u) = 0.8
+  p_max <- 1     # Limite superior da sigmoide
   
-  # Calculo dos parametros b e c
-  b <- log(pu / (1 - pu) / (p0 / (1 - p0))) / u
-  c <- -log(p0 / (1 - p0)) / b
+  # Cálculo dos parâmetros b e c
+  b <- log((pu - p_min) / (p_max - pu) * (p_max - p0) / (p0 - p_min)) / u
+  c <- -log((p0 - p_min) / (p_max - p0)) / b
   
-  # Retorna a probabilidade para o valor x dado
-  return(sigmoid(x, b, c))
+  # Retorna a probabilidade ajustada
+  return(sigmoid(x, b, c, p_min, p_max))
 }
 
-# Chamando a funcao com os valores de u = 1, 4 e 7
 plot_phi(c(1, 4, 7))
 
 
