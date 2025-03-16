@@ -58,9 +58,10 @@ simulador_redeneural_discreto<-function(m,n,W=matrix(0, m, m)){  # m=neuronios n
       u<-floor(mean(rowSums(W)))
       
       # Funcao sigmoide ajustada
-      sigmoid <- function(x, b, c) {
-        1 / (1 + exp(-b * (x - c)))
-      }
+      sigmoid <- function(x, b, c, p_min, p_max) {
+  # Função sigmoidal ajustada com limites
+  p_min + (p_max - p_min) / (1 + exp(-b * (x - c)))
+}
       
       # Funcao que calcula a probabilidade baseada na funcao sigmoide ajustada
       phi<- function(x, u) {
