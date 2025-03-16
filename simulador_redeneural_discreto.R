@@ -66,8 +66,10 @@ simulador_redeneural_discreto<-function(m,n,W=matrix(0, m, m)){  # m=neuronios n
       phi<- function(x, u) {
         
         # Condicoes
-        p0 <- 0.02  # f(U < 0) = 0,02
-        pu <- 0.8   # f(U < u) = 0,8
+        p_min <- 0.02  # f(U -> -inf) = 0.02
+        p0 <- 0.05     # f(U < 0) = 0.05
+        pu <- 0.8      # f(U < u) = 0.8
+        p_max <- 1     # Limite superior da sigmoide
     
         # Calculo dos parametros b e c
         b <- log(pu / (1 - pu) / (p0 / (1 - p0))) / u
