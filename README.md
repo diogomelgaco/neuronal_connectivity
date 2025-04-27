@@ -24,4 +24,4 @@ Todos os códigos foram desenvolvidos utilizando o R 4.4.2 e devem ser consultad
    
 5. *Aplicacao_DadosReais.R*
    
-   Extração dos dados reais utilizados em  "Estimation of neuronal interaction graph from spike train data", por Brochini (2017), seguidos os mesmos passos de discretização e em seguida, a aplicação dos estimadores por Blocos, Pares e Pares Extendido, visando identificar conexões entre os neurônios com base em uma sequência de disparos real. Os dados reais também foram incluídos nessa pasta sob o nome "LocusData.7z".
+   Extração dos dados reais utilizados em  "Estimation of neuronal interaction graph from spike train data", por Brochini (2017), seguidos os mesmos passos de discretização e em seguida, a aplicação dos estimadores por Blocos, Pares e Pares Extendido, visando identificar conexões entre os neurônios com base em uma sequência de disparos real. Os dados reais também foram incluídos nessa pasta sob o nome "LocusData".
