@@ -150,7 +150,6 @@ plot_neural <- function(W) {
          lwd = 2,
          col = "black",
          pt.cex = 1.5,
-         inset = c(0.02, -0.35),
          x.intersp = 1.2,
          y.intersp = 1.5,
          bty = "o",
