@@ -18,10 +18,14 @@ Todos os códigos foram desenvolvidos utilizando o R 4.4.2 e devem ser consultad
    
    Algoritmo para estimar a conectividade entre neurônios de forma adaptada ao descrito em Santis (2022) em "Estimating the interaction graph of stochastic neuronal dynamics by observing only pairs of neurons", considerando agora uma sequência de disparos discretizados. Além de todos as representações gráficas apresentadas no capítulo 4 da dissertação.
 
-4. *Estimador_ConectividadeNeuronal_ParesExtendido.R*
+4. *Tuning_Estimador_ConectividadeNeuronal_Pares.R*
+   
+   Algoritmo para estimar os limiares usado no estimador de conectividade entre neurônios por pares para definir se um neurônio j será incluído no conjunto de neurônios pré-sinápticos do neurônio i. Também se encontram inclusos todas os gráficos usados para essa avaliação.
+
+5. *Estimador_ConectividadeNeuronal_ParesExtendido.R*
    
     Algoritmo para estimar a conectividade entre neurônios considerando pares de neurônios, porém, com uma extensão das janelas de tempo definidas no estimador de Santis (2022).
    
-5. *Aplicacao_DadosReais.R*
+6. *Aplicacao_DadosReais.R*
    
    Extração dos dados reais utilizados em  "Estimation of neuronal interaction graph from spike train data", por Brochini (2017), seguidos os mesmos passos de discretização e em seguida, a aplicação dos estimadores por Blocos, Pares e Pares Extendido, visando identificar conexões entre os neurônios com base em uma sequência de disparos real. Os dados reais também foram incluídos nessa pasta sob o nome "LocusData".
