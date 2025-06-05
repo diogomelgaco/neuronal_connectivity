@@ -373,8 +373,8 @@ dados <- data.frame(
   n = factor(rep(c("10.000", "100.000", "1.000.000"), each = 3),
              levels = c("10.000", "100.000", "1.000.000")),
   Exemplo = factor(rep(c("Exemplo 1", "Exemplo 2", "Exemplo 3"), times = 3)),
-  Acertos_total = c(80, 71, 61, 90, 100, 84, 95, 100, 93),
-  Acerto_conexao = c(100, 85, 55, 89, 100, 66, 100, 100, 82)
+  Acertos_total = c(80, 71, 61, 90, 100, 81, 95, 100, 85),
+  Acerto_conexao = c(100, 85, 55, 89, 100, 58, 100, 100, 60)
 )
 
 # Gráfico
