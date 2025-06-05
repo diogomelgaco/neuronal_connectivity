@@ -39,7 +39,7 @@ SD_star <- function(X, i, j, aux = NULL) {
 
 ######################################################################################################################## o
 ######################################################################################################################## o
-#####  2: Estimador Pares Extendido  ----
+#####  2: Estimador Pares Estendido  ----
 
 estimador_redeneural_pares_vetorizado_star_fast <- function(X, u, Delta = 10.33,csi1=0.005, csi2=0.10,  verbose = FALSE) {
   n <- ncol(X)
