@@ -309,14 +309,8 @@ juntar_ultimos_blocos_dadosfixos <- function(qtd_blocos = 10, salvar_csv = TRUE,
 }
 
 ### 3.3: Resultados   ----
-simular_todos_os_limiares_dados_fixo(num_blocos = 10, n_por_bloco = 10, m = 5, t = 300000)
-tabela_ultimos_blocos <- juntar_ultimos_blocos_dadosfixos(qtd_blocos = 10)
-
-
-
-# Lendo o arquivo salvo
-tabela_tunning_2 <- read.csv("C:/Users/maril/OneDrive/Área de Trabalho/Mestrado/Tunning/base_tunning_limiares_fixos.csv",
-                             header = TRUE, stringsAsFactors = FALSE)
+simular_todos_os_limiares_dados_fixo(num_blocos = 20, n_por_bloco = 10, m = 5, t = 300000)
+tabela <- juntar_ultimos_blocos_dadosfixos(qtd_blocos = 10)
 
 
 # Preparar função auxiliar para criar os boxplots agrupados
@@ -357,10 +351,6 @@ criar_boxplot <- function(tabela, var_y, titulo = NULL, csi1_incluir = NULL, csi
 # Criar os 4 gráficos
 plot1 <- criar_boxplot(tabela_tunning_2, "Acerto_conex", ,csi1_incluir = setdiff(unique(tabela_tunning_2$csi1), 0))
 grid.arrange(plot1, ncol = 1)
-
-# Lendo o arquivo salvo
-tabela <- read.csv("C:/Users/maril/OneDrive/Área de Trabalho/Mestrado/Tunning/base_tunning_limiares_fixos2.csv",
-                             header = TRUE, stringsAsFactors = FALSE)
 
 # Garantir que as colunas são numéricas
 tabela$csi1 <- as.numeric(tabela$csi1)
